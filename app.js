@@ -1,4 +1,6 @@
 const express = require('express')
+const slugify = require('slugify')
+
 const products_routes = require('./routes/products.js')
 
 //Server instantiation
@@ -14,8 +16,8 @@ app.use(express.json())
 app.use('/', products_routes)
 
 //Server startup
-app.listen(5000, () => {
-    console.log('server is listening on port 5000')
+app.listen(3000, () => {
+    console.log(slugify('server is listening on port 3000', { replacement: '*' }))
 })
 
 
